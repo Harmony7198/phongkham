@@ -1,0 +1,335 @@
+```css
+/* ==========================================================
+   PRINT STYLES
+   src/css/print.css
+========================================================== */
+
+@page {
+    size: A4;
+    margin: 15mm;
+}
+
+@media print {
+
+    /* ======================================================
+       RESET
+    ====================================================== */
+
+    * {
+        color: #000 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    html,
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        font-family: "Times New Roman", serif;
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    /* ======================================================
+       ẨN CÁC THÀNH PHẦN KHÔNG CẦN IN
+    ====================================================== */
+
+    header,
+    nav,
+    aside,
+    footer,
+
+    form,
+
+    .toolbar,
+    .form-actions,
+    .header-actions,
+
+    button,
+    input,
+    select,
+    textarea,
+
+    #section-tiep-nhan,
+    #section-kham-benh,
+
+    #danh-sach-benh-nhan,
+    #danh-sach-don-thuoc,
+
+    #button-dong-modal,
+    #button-in-don,
+
+    #button-tao-du-lieu-mau,
+    #button-xoa-du-lieu,
+
+    #thong-bao-he-thong {
+
+        display: none !important;
+
+    }
+
+    /* ======================================================
+       CHỈ HIỂN THỊ MODAL ĐƠN THUỐC
+    ====================================================== */
+
+    dialog {
+
+        display: block !important;
+
+        position: static !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        max-height: none !important;
+
+        border: none !important;
+
+        padding: 0 !important;
+
+        margin: 0 !important;
+
+        overflow: visible !important;
+
+    }
+
+    dialog::backdrop {
+
+        display: none !important;
+
+    }
+
+    .modal {
+
+        width: 100%;
+
+        margin: 0;
+
+        padding: 0;
+
+    }
+
+    .modal-header {
+
+        text-align: center;
+
+        border-bottom: 2px solid #000;
+
+        margin-bottom: 12pt;
+
+        padding-bottom: 8pt;
+
+    }
+
+    .modal-header h2 {
+
+        font-size: 20pt;
+
+        margin: 0;
+
+    }
+
+    .modal-body {
+
+        padding: 0;
+
+    }
+
+    .modal-footer {
+
+        display: none !important;
+
+    }
+
+    /* ======================================================
+       THÔNG TIN PHÒNG KHÁM
+    ====================================================== */
+
+    .thong-tin-phong-kham {
+
+        text-align: center;
+
+        margin-bottom: 18pt;
+
+    }
+
+    .thong-tin-phong-kham h3 {
+
+        font-size: 18pt;
+
+        margin-bottom: 6pt;
+
+    }
+
+    .thong-tin-phong-kham p {
+
+        margin: 0;
+
+    }
+
+    /* ======================================================
+       THÔNG TIN ĐƠN THUỐC
+    ====================================================== */
+
+    .thong-tin-don {
+
+        margin-bottom: 18pt;
+
+    }
+
+    .thong-tin-don p {
+
+        margin: 4pt 0;
+
+    }
+
+    /* ======================================================
+       BẢNG THUỐC
+    ====================================================== */
+
+    table {
+
+        width: 100%;
+
+        border-collapse: collapse;
+
+        margin-top: 12pt;
+
+        page-break-inside: auto;
+
+    }
+
+    thead {
+
+        display: table-header-group;
+
+    }
+
+    tbody {
+
+        display: table-row-group;
+
+    }
+
+    tr {
+
+        page-break-inside: avoid;
+
+        page-break-after: auto;
+
+    }
+
+    th,
+    td {
+
+        border: 1px solid #000;
+
+        padding: 6pt;
+
+        vertical-align: top;
+
+        text-align: left;
+
+        font-size: 11pt;
+
+        word-break: break-word;
+
+    }
+
+    th {
+
+        font-weight: bold;
+
+    }
+
+    /* ======================================================
+       LỜI DẶN
+    ====================================================== */
+
+    #modal-loi-dan {
+
+        margin-top: 12pt;
+
+        min-height: 40pt;
+
+    }
+
+    /* ======================================================
+       CHỮ KÝ BÁC SĨ
+    ====================================================== */
+
+    .chu-ky-bac-si {
+
+        width: 260px;
+
+        margin-top: 40pt;
+
+        margin-left: auto;
+
+        text-align: center;
+
+    }
+
+    .chu-ky-bac-si p {
+
+        margin: 0;
+
+    }
+
+    .chu-ky-bac-si .khoang-trong {
+
+        height: 70pt;
+
+    }
+
+    /* ======================================================
+       TỰ ĐỘNG THÊM PHẦN KÝ TÊN
+    ====================================================== */
+
+    .modal-body::after {
+
+        content:
+            "------------------------------\A"
+            "Bác sĩ\A\A\A\A\A"
+            "(Ký và ghi rõ họ tên)";
+
+        white-space: pre;
+
+        display: block;
+
+        width: 250px;
+
+        margin-top: 50pt;
+
+        margin-left: auto;
+
+        text-align: center;
+
+        font-weight: bold;
+
+    }
+
+    /* ======================================================
+       KHÔNG IN LINK
+    ====================================================== */
+
+    a {
+
+        color: #000;
+
+        text-decoration: none;
+
+    }
+
+    a::after {
+
+        content: "";
+
+    }
+
+}
+```
