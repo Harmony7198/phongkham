@@ -1,26 +1,24 @@
 # ngay khi sự kiện phát sinh => lập tức kích hoạt workflow này
 on:
-  push:
-  pull_request:
   workflow_dispatch:
 
-
-
-#lựa chọn máy runner để chạy workflow
-runs-on: ubuntu-24.04
 #job test
+jobs:
 test:
-steps:
-  #step 1. lấy source về
-  - name: Clone/Checkout source code
-    uses: actions/checkout@v3
-  #step 2. cài đặt caccs thư viện phụ thuộc
-  - name: Install dependencies
-    run: |
-    node --version
-    npm --version
-    pwd
-    ls -al
-  #step 3. chạy test
-  - name: Run tests
-    run: npm test
+#lựa chọn máy runner để chạy workflow
+runs-on: ubuntu-latest
+
+  steps:
+    #step 1. lấy source về
+    - name: Clone/Checkout source code
+      uses: actions/checkout@v3
+    #step 2. cài đặt caccs thư viện phụ thuộc
+    - name: Install dependencies
+      run: |
+      node --version
+      npm --version
+      pwd
+      ls -al
+    #step 3. chạy test
+    - name: Run tests
+      run: npm test
