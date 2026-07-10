@@ -4,9 +4,9 @@ on:
 
 #job test
 jobs:
-test:
-#lựa chọn máy runner để chạy workflow
-runs-on: ubuntu-latest
+  test:
+    #lựa chọn máy runner để chạy workflow
+    runs-on: ubuntu-latest
 
   steps:
     #step 1. lấy source về
