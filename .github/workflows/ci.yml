@@ -1,24 +1,38 @@
-# ngay khi sự kiện phát sinh => lập tức kích hoạt workflow này
+name: Run Tests
+
+# Ngay khi sự kiện phát sinh => lập tức kích hoạt workflow này
 on:
   workflow_dispatch:
 
-#job test
+# Job test
 jobs:
   test:
-    #lựa chọn máy runner để chạy workflow
+    # Lựa chọn máy runner để chạy workflow
     runs-on: ubuntu-latest
 
-  steps:
-    #step 1. lấy source về
-    - name: Clone/Checkout source code
-      uses: actions/checkout@v3
-    #step 2. cài đặt caccs thư viện phụ thuộc
-    - name: Install dependencies
-      run: |
-      node --version
-      npm --version
-      pwd
-      ls -al
-    #step 3. chạy test
-    - name: Run tests
-      run: npm test
+    steps:
+      # Step 1. Lấy source về
+      - name: Clone/Checkout source code
+        uses: actions/checkout@v4
+
+      # Step 2. Cài đặt Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Step 3. Cài đặt thư viện
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4. Kiểm tra môi trường
+      - name: Show environment
+        run: |
+          node --version
+          npm --version
+          pwd
+          ls -al
+
+      # Step 5. Chạy test
+      - name: Run tests
+        run: npm test
